@@ -29,7 +29,7 @@ function calculatePow() {
     
 }
 
-rootBtn.addEventListener('click', calculateRoot())
+rootBtn.addEventListener('click', calculateRoot)
 
 function calculateRoot() {
     const base = baseInput.value;

@@ -14,8 +14,8 @@
 //         console.log(ditto);
 //     } else if (this.readyState ===4 && this.status !== 200) {
 //         console.log('Siamo nei pasticci il server ha risposto', this.status);
-        
-        
+
+
 //     }
 // }
 
@@ -36,8 +36,8 @@
 
 // function callbackError(error) {
 //     console.log('Siamo nei pasticci il server ha risposto',error.message);
-    
-    
+
+
 // }
 
 //------------------------- AWAIT & ASYNC ------------------------------------//
@@ -45,7 +45,7 @@
 
 // async function loadPokemon() {
 //     const url = 'https://pokeapi.co/api/v2/pokemon/ditto';
-    
+
 //     // fetch(url)
 //     // .then(resp => resp.json())
 //     // .then(json => console.log(json));
@@ -54,13 +54,13 @@
 //     const json = await response.json();
 //    // console.log(json);
 //     return json;
-    
+
 // }
 
 
 // function loadPokemon2() {
 //     const url = 'https://pokeapi.co/api/v2/pokemon/ditto';
-    
+
 //     return fetch(url)
 //     .then(resp => resp.json())
 //     .then(json => json);
@@ -72,13 +72,87 @@
 
 //-------------------------------- PROMISE ------------------------------------//
 
-function testaOCroce() {
-    const randomNumber = Math.random();
+// function testaOCroce() {
+//     const randomNumber = Math.random();
 
-    if (randomNumber > 0.5) {
-        return 'testa'
-    } else{
-        return 'croce'
-    }
-    
-}
+//     if (randomNumber > 0.5) {
+//         return 'testa'
+//     } else{
+//         return 'croce'
+//     }
+// }
+
+// const risultato = testaOCroce();
+// console.log(risultato);
+
+
+// function testaOCroceWithPromise() {
+//     const newPromise = new Promise((resolve, _) =>{
+
+//     const randomNumber = Math.random();
+
+//     if (randomNumber > 0.5) {
+//        resolve('testa');
+//     } else{
+//         resolve('croce');
+//     }
+//     });
+//     return newPromise;
+
+// }
+
+// function siMangiaLaPizzaStasera(risultatoMoneta) {
+
+//     if (risultatoMoneta === 'testa') {
+//         console.log('Evviva, stasera pizza!!!');
+//     } else{
+//         console.log('noooo, stasera minestrina');
+
+//     }
+// }
+
+// // testaOCroceWithPromise().then(siMangiaLaPizzaStasera);
+
+
+// function testaOCroceWithCallback(callback) {
+//     const randomNumber = Math.random();
+
+//     if (randomNumber > 0.5) {
+//         callback('testa');
+//     } else{
+//         callback('croce');
+//     }
+// }
+// testaOCroceWithCallback(siMangiaLaPizzaStasera);
+
+
+//--------------------------- Super FETCH -----------------------------------------------//
+
+// function superFetch(url) {
+//     const newPromise = new Promise((resolve, reject) => {
+
+//         const http = new XMLHttpRequest();
+
+//         http.onreadystatechange = () => {
+//              if (http.readyState == 4 && http.status === 200) {
+//                 const ditto = JSON.parse(http.responseText);
+//                 resolve(ditto);
+
+//             } else if (http.readyState === 4 && http.status !== 200) {
+//                 reject(http.status);
+//             }
+//         };
+//         http.open("GET", url, true);
+//         http.send();
+
+//     })
+//     return newPromise;
+// }
+
+// const url = 'https://pokeapi.co/api/v2/pokemon/ditto';
+
+// superFetch(url)
+// .then(json => console.log(json))
+// .catch(error => console.log((error)));
+
+//-------------------------------------- WORKERS --------------------------------------------//
